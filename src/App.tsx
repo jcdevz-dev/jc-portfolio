@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Hero from './components/Hero';
+import Navigation from './components/Navigation';
+import { GitHub,Linkedin, Globe } from 'react-feather';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation/>
+      <Hero/>
+      <div className="liner">
+        <div className="liner-links">
+          <a href="https://github.com/jcdevz-dev" target="_blank" rel="noopener noreferrer" title="github.com">
+            <GitHub color="#787c88" size={26}/>
+          </a>
+          <a href="https://www.linkedin.com/in/john-carlo-devera-5240761b6/" target="_blank" rel="noopener noreferrer" title="linkedin.com">
+            <Linkedin color="#787c88" size={26}/>
+          </a>
+          <a href="https://www.onlinejobs.ph/jobseekers/info/1429893" target="_blank" rel="noopener noreferrer" title="onlinejobs.ph">
+            <Globe color="#787c88" size={26}/>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
