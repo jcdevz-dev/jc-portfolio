@@ -1,26 +1,45 @@
-import React from 'react';
-import Hero from './components/Hero';
+import React, {useEffect, useState, useRef} from 'react';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 import Navigation from './components/Navigation';
-import { GitHub,Linkedin, Globe } from 'react-feather';
+import Loader from './components/Loader';
+import Links from './components/Links';
+import Footer from './components/Footer';
 
 function App() {
+
+  const [loaded, setloaded] = useState(1)
+  const [mounted, setmounted] = useState(true)
+  const [mode, setmode] = useState('')
+
+  useEffect(() => {
+    setTimeout(() => {
+      setloaded(0)
+      setmounted(false)
+    }, 1400);
+  }, [])
+
+  const toggleMode=(mode: string)=>{
+    setmode(mode)
+  }
+
   return (
-    <div className="App">
-      <Navigation/>
-      <Hero/>
-      <div className="liner">
-        <div className="liner-links">
-          <a href="https://github.com/jcdevz-dev" target="_blank" rel="noopener noreferrer" title="github.com">
-            <GitHub color="#787c88" size={26}/>
-          </a>
-          <a href="https://www.linkedin.com/in/john-carlo-devera-5240761b6/" target="_blank" rel="noopener noreferrer" title="linkedin.com">
-            <Linkedin color="#787c88" size={26}/>
-          </a>
-          <a href="https://www.onlinejobs.ph/jobseekers/info/1429893" target="_blank" rel="noopener noreferrer" title="onlinejobs.ph">
-            <Globe color="#787c88" size={26}/>
-          </a>
-        </div>
-      </div>
+    <div className={`App ${mode}`}>
+      
+      {
+        mounted ? 
+        <Loader isloaded={loaded}/>
+        :
+        <>
+          <Links/>
+          <Navigation toggleaction={toggleMode} currentmode={mode}/> 
+          <About/>
+          <Projects/>
+          <Contact/>
+          <Footer/>
+        </>
+      }
     </div>
   );
 }

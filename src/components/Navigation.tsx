@@ -1,43 +1,45 @@
 import React, {useState} from "react";
+import { Moon, Sun } from 'react-feather';
 
-const Navigation =()=>{
+const Navigation =(props: any)=>{
     
     const [selected, setselected] = useState([
-        {s: true, name: 'About', link: '#about-me'},
-        {s: false, name: 'Projects', link: '#my-project'},
-        {s: false, name: 'Contact', link: '#contact-me'},
+        {s: true, name: 'About', link: '/#about-me'},
+        {s: false, name: 'Projects', link: '/#my-projects'},
+        {s: false, name: 'Contact', link: '/#contact-me'},
     ])
 
-    const Show =()=> {
-        var navList = document.getElementById("nav-lists");
-        navList?.classList.add("_Menus-show");
-    }
-    
-    const Hide =()=> {
-        var navList = document.getElementById("nav-lists");
-        navList?.classList.remove("_Menus-show");
-    }
+    const [show, setshow] = useState(false)
 
     const updateStatus =(k: number)=>{
         selected.map((i,u)=> i.s = u === k ? true : false)
         setselected([...selected])
+        setshow(false)
     }
 
     return(
         <div className="container">
-            <div className="logo">
-                <a href="#"><img src="./logo-square.png" alt="jc"/></a>
+            <a href="/">
+                <div className="logo animated fadeInDown">
+                    <div className="draw drawActive draw-logo"></div>
+                </div>
+            </a>
+            <div className="toggleMode animated fadeInDown">
+                {props.currentmode===''?
+                <Sun onClick={()=>props.toggleaction('dayMode')} className="link-toggle" color="var(--secondary)" size={32} strokeWidth={1}/>
+                :
+                <Moon onClick={()=>props.toggleaction('')} className="link-toggle" color="var(--secondary)" size={28} strokeWidth={1}/>
+                }
             </div>
             <div className="navbar">
-                <div className="icon-bar" onClick={()=>Show()}>
+                <div className="icon-bar animated fadeInDown" onClick={()=>setshow(true)}>
                     <i></i>
                     <i></i>
                     <i></i>
                 </div>
-
-                <ul id="nav-lists">
-                    <li className="close"><span onClick={()=>Hide()}>×</span></li>
-                    { selected.map((i,k)=> <li key={k}><a href={i.link} onClick={()=>updateStatus(k)} className={i.s? 'selectedLink' : ''}>{i.name}</a></li> ) }
+                <ul className={show? "_Menus-show" : 'animated fadeInDown'}>
+                    <li className="close"><span onClick={()=>setshow(false)}>×</span></li>
+                    { selected.map((i,k)=> <li key={k}><a href={i.link} onClick={()=>updateStatus(k)} className={i.s? `selectedLink-${k}` : ''}><span className={`span-${k+1}`}>0{k+1}. </span>{i.name}</a></li> ) }
                 </ul>
             </div>
         </div>
