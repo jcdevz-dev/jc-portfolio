@@ -25,11 +25,12 @@ const Navigation =(props: any)=>{
                 </div>
             </a>
             <div className="toggleMode animated fadeInDown">
-                {props.currentmode===''?
-                <Sun onClick={()=>props.toggleaction('dayMode')} className="link-toggle" color="var(--secondary)" size={32} strokeWidth={1}/>
-                :
-                <Moon onClick={()=>props.toggleaction('')} className="link-toggle" color="var(--secondary)" size={28} strokeWidth={1}/>
-                }
+                <Sun 
+                    onClick={()=>props.toggleaction()}
+                    className={props.currentmode ? 'link-toggle-active' : 'link-toggle'} 
+                    color="var(--secondary)" 
+                    size={32} 
+                    strokeWidth={1} />
             </div>
             <div className="navbar">
                 <div className="icon-bar animated fadeInDown" onClick={()=>setshow(true)}>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -11,7 +11,7 @@ function App() {
 
   const [loaded, setloaded] = useState(1)
   const [mounted, setmounted] = useState(true)
-  const [mode, setmode] = useState('')
+  const [mode, setmode] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,12 +20,12 @@ function App() {
     }, 1400);
   }, [])
 
-  const toggleMode=(mode: string)=>{
-    setmode(mode)
+  const toggleMode=()=>{
+    setmode(!mode)
   }
 
   return (
-    <div className={`App ${mode}`}>
+    <div className={`App ${mode && 'dayMode'}`}>
       
       {
         mounted ? 
