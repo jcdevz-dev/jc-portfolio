@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { Moon, Sun } from 'react-feather';
+import {useState} from "react";
+import { Sun } from 'react-feather';
 
 const Navigation =(props: any)=>{
     
