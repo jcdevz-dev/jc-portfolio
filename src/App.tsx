@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div className={`App ${mode && 'dayMode'}`}>
+    <div className={`App ${mode ? 'dayMode' : 'darkMode'}`}>
       
       {
         mounted ? 
@@ -38,6 +38,7 @@ function App() {
           <Projects/>
           <Contact/>
           <Footer/>
+          <footer>Crafted by John Carlo Devera</footer>
         </>
       }
     </div>

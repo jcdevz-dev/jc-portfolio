@@ -8,14 +8,18 @@ const Hero =()=>{
             <div className="line"></div>
             <code className="working">Some technologies I've been working with recently:</code>
             <ul className="skills-list">
-                <li>JavaScript (ES6+)</li>
-                <li>React</li>
-                <li>React-Native</li>
+                <li>JavaScript (ES5+)</li>
+                <li>TypeScript</li>
                 <li>Vue</li>
+                <li>React</li>
+                <li>React Native</li>
+                <li>Flutter</li>
                 <li>Node.js</li>
                 <li>Firestore</li>
+                <li>MongoDB</li>
                 <li>Laravel</li>
-                <li>MySql</li>
+                <li>MySQL</li>
+                <li>Styled Components</li>
             </ul>
         </div>
     )
