@@ -18,13 +18,13 @@ const Navigation =(props: any)=>{
     }
 
     return(
-        <div className="container">
+        <div className="container animated fadeInDown">
             <a href="/">
-                <div className="logo animated fadeInDown">
+                <div className="logo">
                     <div className="draw drawActive draw-logo"></div>
                 </div>
             </a>
-            <div className="toggleMode animated fadeInDown">
+            <div className="toggleMode">
                 <Sun 
                     onClick={()=>props.toggleaction()}
                     className={props.currentmode ? 'link-toggle-active' : 'link-toggle'} 
@@ -33,7 +33,7 @@ const Navigation =(props: any)=>{
                     strokeWidth={1} />
             </div>
             <div className="navbar">
-                <div className="icon-bar animated fadeInDown" onClick={()=>setshow(true)}>
+                <div className="icon-bar" onClick={()=>setshow(true)}>
                     <i></i>
                     <i></i>
                     <i></i>
