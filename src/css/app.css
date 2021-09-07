@@ -737,9 +737,6 @@ animation-name: fadeInDown;
     width: 100%;
     height: 100%;
     overflow: auto;
-    -webkit-transition: left .6s;
-    -o-transition: left .6s;
-    transition: left .6s;
     text-align: left;
     z-index: 1;
   }
@@ -765,6 +762,12 @@ animation-name: fadeInDown;
   .container .navbar ._Menus-show {
     left: 0;
     padding-left: 20px;
+    transition: left .3s ease-out;
+  }
+
+  .container .navbar ._Menus-hide {
+    left: 100%;
+    transition: left .3s ease-in;
   }
 
 }
@@ -804,7 +807,6 @@ footer{
   display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #090c10;
   color: var(--sublime);
   font-size: 12px;
   padding: 12px;

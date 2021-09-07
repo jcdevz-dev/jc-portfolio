@@ -38,7 +38,7 @@ const Navigation =(props: any)=>{
                     <i></i>
                     <i></i>
                 </div>
-                <ul className={show? "_Menus-show" : 'animated fadeInDown'}>
+                <ul className={show? "_Menus-show" : '_Menus-hide'}>
                     <li className="close"><span onClick={()=>setshow(false)}>×</span></li>
                     { selected.map((i,k)=> <li key={k}><a href={i.link} onClick={()=>updateStatus(k)} className={i.s? `selectedLink-${k}` : ''}><span className={`span-${k+1}`}>0{k+1}. </span>{i.name}</a></li> ) }
                 </ul>
