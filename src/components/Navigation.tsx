@@ -18,7 +18,7 @@ const Navigation =(props: any)=>{
     }
 
     return(
-        <div className="container animated fadeInDown">
+        <div className={show? "container animated fadeInDown navMob" : 'container animated fadeInDown'}>
             <a href="/">
                 <div className="logo">
                     <div className="draw drawActive draw-logo"></div>

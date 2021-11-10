@@ -347,6 +347,7 @@ ul.skills-list li::before {
   font-family: var(--font-main);
   padding: 12px 0 12px 0;
   font-size: 14px;
+  min-height: 120px;
 }
 
 .card-header{
@@ -718,6 +719,10 @@ animation-name: fadeInDown;
     flex: 1;
   }
 
+  .navMob {
+    align-items: flex-start;
+    height: 100%;
+  }
   .container .navbar {
     -webkit-box-flex: 0;
     -ms-flex: 0;
@@ -741,12 +746,13 @@ animation-name: fadeInDown;
     z-index: 1;
   }
 
-  .container .navbar ul li a {
-    padding: 20px;
+  .container .navbar ul li {
+    /* padding: 20px; */
     font-size: 20px;
     height: auto;
     line-height: normal;
     color: var(--sublime);
+    display: unset;
   }
 
   .container .navbar ul .close {

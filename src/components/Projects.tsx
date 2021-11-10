@@ -8,7 +8,7 @@ const Projects =()=>{
             tools: 'react-native java android',
             github: 'https://github.com/jcdevz-dev/WorshipHim',
             link: 'https://play.google.com/store/apps/details?id=com.ellinx.lightapps.worshiphim&hl=en&gl=US',
-        }
+        },
     ]
     return(
         <div id="my-projects" className="hero animated fadeInLeft" style={{animationDelay: '.4s'}}>
