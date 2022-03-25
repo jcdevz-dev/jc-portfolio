@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Loader from './components/Loader';
 import Links from './components/Links';
 import Footer from './components/Footer';
+import Stars from './components/Stars';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Loader isloaded={loaded}/>
         :
         <>
+          <Stars/>
           <Links/>
           <Navigation toggleaction={toggleMode} currentmode={mode}/> 
           <About/>

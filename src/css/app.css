@@ -100,7 +100,7 @@ ul.skills-list li::before {
   content: "▹";
   position: absolute;
   left: 0px;
-  color: var(--secondary);
+  color: var(--green);
   font-size: 14px;
   line-height: 16px;
 }
@@ -456,7 +456,6 @@ ul.skills-list li::before {
 }
 
 
-
 @-webkit-keyframes fadeInLeft {
   0% {
      opacity: 0;
@@ -558,7 +557,7 @@ animation-name: fadeInDown;
   margin: 50px 0 10px 0;
   padding: 0 !important;
   font-size: 16px;
-  color: var(--secondary);
+  color: var(--green);
 }
 
 /* scroll */
@@ -633,8 +632,88 @@ animation-name: fadeInDown;
 
 
 
+/* frame */
+
+@property --gap {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+img {
+  --border: 15px;
+  --gap: 12px;
+  --color: #7ee787;
+
+  width: 355px;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: calc(var(--border) + var(--gap));
+
+  --angle: 90deg;
+  background: radial-gradient(farthest-side, var(--color) 97%, #0000 101%)
+      85.35% 85.35%,
+    conic-gradient(
+      from calc(180deg - var(--angle) / 2),
+      #0000 var(--angle),
+      var(--color) 0
+    ),
+    radial-gradient(farthest-side, var(--color) 97%, #0000 101%) 14.65% 85.35%;
+  background-size: var(--border) var(--border), auto;
+  background-repeat: no-repeat;
+
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #000 calc(99% - calc(var(--border) + var(--gap))),
+    #0000 calc(100% - calc(var(--border) + var(--gap)))
+      calc(99% - var(--border)),
+    #000 calc(100% - var(--border))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    #000 calc(99% - calc(var(--border) + var(--gap))),
+    #0000 calc(100% - calc(var(--border) + var(--gap)))
+      calc(99% - var(--border)),
+    #000 calc(100% - var(--border))
+  );
+  transition: --angle 0.4s, --gap 0.4s;
+}
+img:hover {
+  --angle: 0deg;
+  --gap: 5px;
+}
+
+
+.profile-img{
+  position: absolute;
+  right: 0;
+  padding: 20px;
+  top: 30%;
+}
 
 /* media queries */
+
+@media only screen and (max-width: 1600px) {
+  .profile-img{
+    position: unset;
+    right: 0;
+    left: 0;
+    padding: 0;
+    top: 0;
+  }
+  img{
+    width: 255px;
+  }
+
+}
+
 @media only screen and (max-width: 1024px) {
   .wrap{
     display: grid;
@@ -643,10 +722,20 @@ animation-name: fadeInDown;
     grid-gap: 1rem;
   }
 
+  .profile-img{
+    position: unset;
+    right: 0;
+    left: 0;
+    padding: 0;
+    top: 0;
+  }
+  img{
+    width: 200px;
+  }
+
 }
 
 @media only screen and (max-width: 682px) {
-
 
   .row{
     flex-direction: column-reverse;
@@ -887,3 +976,5 @@ footer{
 #stars, #stars2, #stars3{
   opacity: .5;
 }
+
+
