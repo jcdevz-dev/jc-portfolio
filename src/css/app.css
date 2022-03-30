@@ -698,9 +698,14 @@ img:hover {
   top: 30%;
 }
 
+.profile-img img{
+  width: 275px;
+}
+
 /* media queries */
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1350px) {
+
   .profile-img{
     position: unset;
     right: 0;
@@ -708,11 +713,12 @@ img:hover {
     padding: 0;
     top: 0;
   }
-  img{
-    width: 255px;
+  .profile-img img{
+    width: 230px;
   }
 
 }
+
 
 @media only screen and (max-width: 1024px) {
   .wrap{
@@ -729,8 +735,8 @@ img:hover {
     padding: 0;
     top: 0;
   }
-  img{
-    width: 200px;
+  .profile-img img{
+    width: 230px;
   }
 
 }
@@ -892,7 +898,7 @@ img:hover {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-top: 29px solid red;
+  border-top: 29px solid;
   border-left: 29px solid #eee;
   border-right: 29px solid #eee;
 }
