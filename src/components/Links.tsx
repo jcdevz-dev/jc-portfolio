@@ -1,4 +1,4 @@
-import { GitHub,Linkedin, Globe } from 'react-feather';
+import { GitHub,Gitlab,Linkedin, Globe } from 'react-feather';
 const Links =()=>{
     return(
       <div className="liner animated fadeInUp" style={{animationDelay: '1s'}}>
@@ -11,6 +11,9 @@ const Links =()=>{
           </a>
           <a href="https://www.onlinejobs.ph/jobseekers/info/1429893" target="_blank" rel="noopener noreferrer" title="onlinejobs.ph">
             <Globe className="link-3" color="#787c88" size={26}/>
+          </a>
+          <a href="https://gitlab.com/jcdevz-dev" target="_blank" rel="noopener noreferrer" title="gitlab.com">
+            <Gitlab className="link-1" color="#787c88" size={26}/>
           </a>
         </div>
       </div>
