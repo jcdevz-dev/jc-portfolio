@@ -9,6 +9,13 @@ const Projects =()=>{
             github: 'https://github.com/jcdevz-dev/WorshipHim',
             link: 'https://play.google.com/store/apps/details?id=com.ellinx.lightapps.worshiphim&hl=en&gl=US',
         },
+        {
+            title: 'Landing App WorshipHIM',
+            desc: 'Landing page of your No.1 Praise and Worship, Chords and Lyrics App, designed to help ease everyone in their worship to God.',
+            tools: 'react javascript html css',
+            github: 'https://github.com/jcdevz-dev/landing.worshiphim',
+            link: 'https://worshiphim.vercel.app/',
+        },
     ]
     return(
         <div id="my-projects" className="hero animated fadeInLeft" style={{animationDelay: '.4s'}}>
